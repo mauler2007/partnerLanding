@@ -1,0 +1,51 @@
+-
+  var advItem = [
+    {pict: 'images/icons/comission.png', name: '1Высокие комиссии', text: '1Гибкая система согласования комиссий с индивидуальным подходом.' }, 
+    {pict: 'images/icons/autopayment.png', name: 'Автовыплаты', text: '2Гибкая система согласования комиссий с индивидуальным подходом.' }, 
+    {pict: 'images/icons/promo.png', name: 'Промоматериалы', text: 'Постоянно обновляемая база материалов.' },
+    {pict: 'images/icons/autopayment.png', name: 'Автовыплаты', text: '2Гибкая система согласования комиссий с индивидуальным подходом.' }, 
+    {pict: 'images/icons/range.png', name: 'Широкий ассортимент для клиентов', text: 'Топовые провайдеры казино и огромное разнообразие спортивных событий.' },
+    {pict: 'images/icons/retention.png', name: 'Отличный Retention', text: 'Высокий процент возврата игроков на всех направлениях ставок и казино' }, 
+    {pict: 'images/icons/cabinet.png', name: 'Личный кабинет и ассистент', text: 'Постоянно обновляемая база материалов.' }, 
+    {pict: 'images/icons/offer.png', name: 'Лучшие CPA предложения', text: 'Высокие ставки, высокая конверсия.' }, 
+    {pict: 'images/icons/payment.png', name: 'Платежные методы', text: 'Более 100 платёжных методов.' }
+  ]
+
+section.advantages
+  .container 
+    .advantages__inner
+      h2.advantages__title.title 
+      ul.advantages__list
+        for i in advItem
+          li.advantages__item
+            .advantages__icon-box
+              img.advantages__icon(src=i.pict, alt='pict')
+            p.advantages__name= i.name
+            p.advantages__text= i.text
+|
+|
+
+
+//- mixin advItem(pict,name,text)
+//-   li.advantages__item
+//-     .advantages__icon-box 
+//-       img.advantages__icon(src=`images/icons/${pict}.png`)
+//-     p.advantages__name= name
+//-     p.advantages__text= text
+
+//- section.advantages
+//-   .container 
+//-     .advantages__inner
+//-       h2.advantages__title.title 
+//-       ul.advantages__list
+//-         +advItem ('comission','Высокие комиссии','Гибкая система согласования комиссий с индивидуальным подходом.')
+//-         |
+//-         |
+//-         +advItem ('autopayment','Автовыплаты','Автоматические еженедельные выплаты комиссий.')
+//-         |
+//-         |
+//-         +advItem ('promo','Промоматериалы','Постоянно обновляемая база материалов ')
+        
+//- |
+//- |
+

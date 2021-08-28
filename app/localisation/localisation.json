@@ -1,0 +1,45 @@
+{
+    "spin": {
+        "ru": "крути колесо",
+        "pt": "gira a roda",
+        "tr": "Çarkı döndür"
+    },
+    "getBonus": {
+        "ru": "- получай бонусы ",
+        "pt": "- adquire os seus bônus ",
+        "tr": "- Bonus Kazan!"
+    },
+    "getBonus2": {
+        "ru": "прямо сейчас!",
+        "pt": "agora mesmo!",
+        "tr": " "
+    },
+    "bonus": {
+        "ru": "бонус"
+    },
+    "losses": {
+        "ru": "попробуй еще!",
+        "pt": "tente novamente!",
+        "tr": "tekrar dene!"
+    },
+    "popUpTitle": {
+        "ru": "поздравляем!",
+        "pt": "parabéns",
+        "tr": "tebrikler"
+    },
+    "popUpTitle2": {
+        "ru": "вы выиграли:",
+        "pt": "voce venceu:",
+        "tr": "kazandınız!"
+    },
+    "popUpBtn": {
+        "ru": "получить бонус",
+        "pt": "receba bónus!!",
+        "tr": "Çarkı döndür"
+    },
+    "spinWheel": {
+        "ru": "крутить колесо",
+        "pt": "gira a roda!",
+        "tr": "bonus al"
+    }
+}

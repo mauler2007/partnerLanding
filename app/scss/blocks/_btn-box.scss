@@ -1,0 +1,174 @@
+.btn-box {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5vw 0 1.5vw;
+
+  @include breakpoint($xxl-bp) {
+    padding: 3.5vw 0 1.5vw;
+  }
+
+  @include breakpoint($tablet-bp) {
+    padding-top: 30px
+  }
+
+  &__new {
+    position: relative;
+
+    margin-bottom: 1.0em;
+    padding: 0 2.8em;
+
+    font-family: 'Arial';
+    font-weight: 600;
+    color: #454444;
+    // font-size: 2.03vw;
+    font-size: clamp(18px, 2.03vw, 26px);
+    line-height: 2.5;
+    text-transform: uppercase;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgb(247, 226, 52) 0%, rgba(234, 189, 44, 0.99608) 100%);
+    box-shadow: 0 0 20px #fff000;
+    overflow: hidden;
+    transition: border-color 0.3s linear,
+      box-shadow 0.3s linear;
+
+    @include breakpoint($middle-bp) {
+      border-radius: 7px;
+      box-shadow: 0 0 20px #fff000;
+    }
+
+    @include breakpoint($mobile-bp) {
+      width: 70vw;
+      text-align: center;
+      padding: 0 1em;
+      font-size: 5vw;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: -150px;
+      z-index: 1;
+      display: block;
+      width: 7rem;
+      height: 40rem;
+      margin-left: 60px;
+
+      background: #fff;
+      opacity: 0.5;
+      transform: rotate(45deg);
+      transition: all 0.3s;
+      animation-name: slideme;
+      animation-duration: 4s;
+      animation-delay: 0.05s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    &:hover {
+      box-shadow: 0 0 4rem #fff000;
+    }
+
+    &:active {
+      box-shadow: 0 0 4rem #fff000;
+    }
+
+    &:focus {
+      border-color: 1px solid $black;
+    }
+  }
+
+  &__old {
+    margin-bottom: 1.1em;
+    padding: 0 40px;
+    padding: 0 3.5em;
+
+    font-family: 'Arial';
+    font-weight: 600;
+    font-size: 1.1vw;
+
+    color: $white;
+    text-transform: uppercase;
+    line-height: 2.5;
+    border-radius: 10px;
+    border: 2px solid $white;
+    transition: color 0.3s linear,
+      border-color 0.3s linear,
+      outline-color 0.3s linear;
+
+    @include breakpoint($middle-bp) {
+      padding: 0 1em;
+
+      line-height: 2;
+      font-weight: 400;
+      border-width: 1px;
+      border-radius: 7px;
+    }
+
+    @include breakpoint($mobile-bp) {
+      font-size: 4vw;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
+  }
+
+  &__rules {
+    @extend %betaandyou;
+    font-size: 1.12vw;
+    color: $white;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    transition: color 0.3s linear,
+      border-color 0.3s linear,
+      outline-color 0.3s linear;
+
+    @include breakpoint($mobile-bp) {
+      font-size: 3.5vw;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:active {
+      border-color: $accent;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
+  }
+
+  @keyframes slideme {
+    0% {
+      left: -130px;
+      margin-left: 0px;
+    }
+
+    30% {
+      left: 110%;
+      margin-left: 80px;
+    }
+
+    100% {
+      left: 110%;
+      margin-left: 80px;
+    }
+  }
+}

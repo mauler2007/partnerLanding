@@ -1,0 +1,214 @@
+.page {
+  position: relative;
+  padding-bottom: 2vw;
+  z-index: 10;
+
+  &__inner {
+    padding-top: 3.125vw;
+
+    @media (min-width: 2300px) {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__top {
+    max-width: 30vw;
+    margin-left: auto;
+    text-align: center;
+
+    @include breakpoint($middle-bp) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint($mobile-bp) {
+      max-width: 100%;
+    }
+  }
+
+  &__bonus,
+  &__promo {
+    font-weight: 600;
+  }
+
+  &__bonus-name {
+    font-size: clamp(16px, 2.2vw, 36px);
+    font-weight: 400;
+    text-shadow: 1px 1px;
+
+    span {
+      display: block;
+      margin: 0.2em 0;
+      font-size: 7.14vw;
+      line-height: 0.9;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $accent;
+      -webkit-text-stroke: 3px;
+      text-stroke: 3px;
+      letter-spacing: 0.01em;
+
+      @include breakpoint($middle-bp) {
+        font-size: 9.1vw;
+        letter-spacing: 0.05em;
+        -webkit-text-stroke: 2px;
+        text-stroke: 2px;
+      }
+    }
+  }
+
+  &__for {
+    font-size: clamp(18px, 3.1vw, 40px);
+    font-weight: 400;
+  }
+
+  &__bonus-summ {
+    margin: 0.1em 0 0.7em;
+
+    font-size: 7.8vw;
+    line-height: 1;
+    color: $accent;
+    font-weight: 600;
+    -webkit-text-stroke: 3px;
+    text-stroke: 3px;
+    transition: all 0.3s linear;
+    animation-name: slideme;
+    animation: scale;
+    animation-duration: 4s;
+    animation-delay: 0.05s;
+    animation-timing-function: alternate;
+    animation-iteration-count: infinite;
+    text-shadow: 1px 1px $accent, 2px 1px $accent,
+      1px 2px $accent, 1px 1px 0.1em $accent;
+    ;
+
+
+
+    @include breakpoint($middle-bp) {
+      font-size: 10.14vw;
+      letter-spacing: 0.05em;
+      text-shadow: none;
+    }
+
+    @include breakpoint($mobile-bp) {
+      letter-spacing: 0.05em;
+      -webkit-text-stroke: 2px;
+      text-stroke: 2px;
+
+    }
+  }
+
+  &__promo {
+    margin-bottom: 5vw;
+
+    @include breakpoint($middle-bp) {
+      margin-bottom: 50vw;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  &__promo-title {
+    font-size: 2.5vw;
+    font-size: clamp(14px, 2.5vw, 56px);
+    font-weight: 400;
+
+    span {
+      color: $yellow;
+      text-transform: lowercase;
+    }
+  }
+
+  &__promo-code {
+    display: inline-block;
+    padding: 0.2em 1.4em;
+    margin: 0.3em auto;
+
+    font-size: clamp(18px, 5.2vw, 116px);
+
+    font-size: 5.2vw;
+    color: $yellow;
+    border: 4px solid $yellow;
+    border-radius: 0.5em;
+    font-weight: 600;
+
+    background-image: radial-gradient(circle, $yellow 30%, transparent 70%);
+    // background-position: 100%;
+    background-size: 550%;
+    transition: all 0.5s linear;
+
+    animation-name: flashAnim;
+    animation-duration: 14s;
+    animation-delay: 0.05s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+
+
+
+
+    // &:hover {
+
+    //   color: $white;
+    //   background-position: 0;
+    // }
+
+    @include breakpoint($mobile-bp) {
+      border-width: 2px;
+    }
+  }
+
+  @keyframes scale {
+
+    0% {
+      scale: 1;
+      // text-shadow: 0 0 0.1em;
+      // color: $accent;
+    }
+
+    50% {
+      transform: scale(1.1);
+      // text-shadow: 0 0 0.3em;
+    }
+
+    100% {
+      transform: scale(1);
+      // text-shadow: 0 0 0.1em;
+      // color: $accent;
+    }
+  }
+
+  @keyframes flashAnim {
+    0% {
+      color: $yellow;
+      background-position: 100%;
+    }
+
+    20% {
+      color: $white;
+      // background-position: 0;
+    }
+
+    49% {}
+
+    50% {
+      background-position: 0%;
+    }
+
+    51% {}
+
+    80% {
+      color: $white;
+      // background-position: 0;
+    }
+
+    100% {
+      color: $yellow;
+      background-position: 100%;
+      // background-size: 0%;
+    }
+  }
+}

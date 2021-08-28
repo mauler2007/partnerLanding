@@ -1,0 +1,33 @@
+-
+  var contactsTitle = 'Контакты'
+  var workTime = 'Время работы'  
+section.contacts
+  .container 
+    .contacts__inner
+      h2.contacts__title= contactsTitle
+
+      address.contacts__address 
+        .contacts__row
+          .contacts__image 
+            img.contacts__img(src='images/icons/contacts1.png')
+          a.contacts__text(href='#').
+            live:.cid.3df81dae8872f81c
+        .contacts__row
+          .contacts__image 
+            img.contacts__img(src='images/icons/contacts2.png')
+          a.contacts__text(href='#').
+            @BetAndYouPartners
+        .contacts__row
+          .contacts__image 
+            img.contacts__img(src='images/icons/contacts3.png')
+          a.contacts__text(href='#').
+            support@betandyou.partners
+        .contacts__row
+          .contacts__image 
+            img.contacts__img(src='images/icons/contacts4.png')
+          a.contacts__text(href='mailto: martketing@betandyou').
+            martketing@betandyou <span>- для коммерческих предложений</span>
+        .contacts__row
+          .contacts__image 
+            img.contacts__img(src='images/icons/contacts5.png')
+          a.contacts__text(href='#')!= 'workTime <span>10:00 AM - 7:00 PM UTC+3 EEST</span>'

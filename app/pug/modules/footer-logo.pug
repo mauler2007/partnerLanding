@@ -1,0 +1,9 @@
+block variables
+  - var logoTextBottom = 'partners'
+
+.logo 
+  a(class=logo__link href="#")
+    svg.logo__svg 
+      use(xlink:href="images/sprite.svg#icon-logo")
+  .logo__slogan 
+    p.logo__text.min-font= logoTextBottom

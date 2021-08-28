@@ -1,0 +1,60 @@
+.registration {
+  // max-width: 18.5vw;
+  // width: 100%;
+
+  &__items {
+      display: flex;
+      max-width: 18.5vw;
+      width: 100%;
+    //   display: flex;
+      justify-content: space-between;
+
+    //  width: 15.5vw;
+  }
+
+  &__item {}
+
+  &__btn {
+    display: inline-block;
+    font-size: clamp(10px, 0.83vw, 14px);
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    border: 1px solid transparent;
+    border-radius: 0.6em;
+
+    transition: background 0.3s linear, border-color 0.3s linear;
+
+    &:hover {
+      background: transparent;
+    }
+
+    &:active {}
+
+    &:focus {}
+  }
+
+  &__new-user {
+    padding: 0.8em 2.1em;
+    background: linear-gradient(90deg, #0354FF -0.35%, #1795F9 99.55%), ;
+
+    &:hover {
+      border-color: #0558FF;
+    }
+  }
+
+  &__old-user {
+    padding: 0.8em 1.3em;
+    background: linear-gradient(90deg, #F40F3E 12.25%, #FFA09F 138%);
+
+
+    &:hover {
+      border-color: #F40F3E;
+    }
+  }
+
+}

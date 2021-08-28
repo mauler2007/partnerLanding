@@ -1,0 +1,20 @@
+
+block header-nav 
+mixin navLink(link,name,active)
+  li.navigation__item
+    if(active) 
+      a(href=link).navigation__link.active= name
+    else 
+      a(href=link).navigation__link= name
+  |
+  |
+
+nav.navigation 
+  ul.navigation__list 
+    +navLink('#', 'о нас', true)
+    +navLink('#', 'контакты')
+    +navLink('#', 'faq')
+    +navLink('#', 'инструменты')
+    +navLink('#', 'условия')
+    +navLink('#', 'новости')
+  

@@ -1,0 +1,56 @@
+$white: #fff;
+$accent:#ffbc00;
+$yellow: #f7e335;
+$black: #000;
+
+$xxl-bp: 1350px;
+$desktop-bp: 1124px;
+$tablet-bp: 992px;
+$middle-bp: 768px;
+$mobile-bp: 576px;
+
+%montserrat-700 {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 700;
+}
+%montserrat-500 {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 500;
+}
+%montserrat-400 {
+  font-family: 'Montserrat',
+    sans-serif;
+  font-weight: 400;
+}
+
+%nunito-900 {
+  font-family: 'Nunito',
+    sans-serif;
+  font-weight: 700;
+}
+
+%betaandyou {
+  font-family: 'Betandyou-Main',
+    sans-serif;
+  // font-weight: 700;
+}
+
+%betaandyou_1 {
+  font-family: 'Betandyou-Main_1',
+    sans-serif;
+  font-weight: 400;
+}
+
+%round {
+  font-family: 'Rounds', sans-serif;
+}
+
+%visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
