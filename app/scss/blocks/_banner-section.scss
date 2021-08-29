@@ -1,0 +1,28 @@
+.banner-section {
+  padding-top: 14vw;
+  padding-bottom: 11.1vw;
+  background-image: url('../images/banner-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+&__inner {
+    display: grid;
+    place-items: center;
+}
+
+&__center {}
+
+
+
+&__title {
+  margin-bottom: 1em;
+  color: $white;
+  font-size: clamp(28px, 2.8vw, 46px) ;
+}
+
+&__link {}
+
+.btn {}
+}

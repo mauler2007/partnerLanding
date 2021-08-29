@@ -139,7 +139,8 @@
             display: none;
             width: 22px;
             height: 21px;
-            margin: 3px 9px 3px 15px;
+            margin: 3px 6px 3px 6px;
+            // margin: 3px 9px 3px 15px;
             background-size: 44px;
 
             @include mq(sm) {
@@ -185,11 +186,11 @@
             order: 1;
 
             @include mq(sm) {
-                height: 45px;
+                height: 27px;
             }
 
             .icon {
-                width: 30px;
+                width: 18px;
                 height: 29px;
                 background-size: 60px;
                 margin-left: 11px;
@@ -200,7 +201,7 @@
                 margin: 5px;
 
                 @include mq(sm) {
-                    font-size: 20px;
+                    font-size: 12px;
                     margin: 5px 0;
                 }
             }
@@ -213,7 +214,7 @@
                 position: relative;
 
                 @include mq(sm) {
-                    width: 45px;
+                    width: 27px;
                     margin-left: 10px;
                 }
 
@@ -229,7 +230,7 @@
                     top: 50%;
 
                     @include mq(sm) {
-                        width: 14px;
+                        width: 9px;
                     }
                 }
 

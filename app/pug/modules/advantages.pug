@@ -1,20 +1,24 @@
--
+-   
   var advItem = [
-    {pict: 'images/icons/comission.png', name: '1Высокие комиссии', text: '1Гибкая система согласования комиссий с индивидуальным подходом.' }, 
-    {pict: 'images/icons/autopayment.png', name: 'Автовыплаты', text: '2Гибкая система согласования комиссий с индивидуальным подходом.' }, 
-    {pict: 'images/icons/promo.png', name: 'Промоматериалы', text: 'Постоянно обновляемая база материалов.' },
-    {pict: 'images/icons/autopayment.png', name: 'Автовыплаты', text: '2Гибкая система согласования комиссий с индивидуальным подходом.' }, 
-    {pict: 'images/icons/range.png', name: 'Широкий ассортимент для клиентов', text: 'Топовые провайдеры казино и огромное разнообразие спортивных событий.' },
-    {pict: 'images/icons/retention.png', name: 'Отличный Retention', text: 'Высокий процент возврата игроков на всех направлениях ставок и казино' }, 
-    {pict: 'images/icons/cabinet.png', name: 'Личный кабинет и ассистент', text: 'Постоянно обновляемая база материалов.' }, 
-    {pict: 'images/icons/offer.png', name: 'Лучшие CPA предложения', text: 'Высокие ставки, высокая конверсия.' }, 
-    {pict: 'images/icons/payment.png', name: 'Платежные методы', text: 'Более 100 платёжных методов.' }
+    {pict: 'images/advantages/comission.png', name: 'Высокие комиссии', text: 'Гибкая система согласования комиссий с индивидуальным подходом.' }, 
+    {pict: 'images/advantages/autopayment.png', name: 'Автовыплаты', text: 'Гибкая система согласования комиссий с индивидуальным подходом.' }, 
+    {pict: 'images/advantages/promo.png', name: 'Промоматериалы', text: 'Постоянно обновляемая база материалов.' },
+    {pict: 'images/advantages/range.png', name: 'Широкий ассортимент для клиентов', text: 'Топовые провайдеры казино и огромное разнообразие спортивных событий.' },
+    {pict: 'images/advantages/retention.png', name: 'Отличный Retention', text: 'Высокий процент возврата игроков на всех направлениях ставок и казино' }, 
+    {pict: 'images/advantages/cabinet.png', name: 'Личный кабинет и ассистент', text: 'Постоянно обновляемая база материалов.' }, 
+    {pict: 'images/advantages/offer.png', name: 'Лучшие CPA предложения', text: 'Высокие ставки, высокая конверсия.' }, 
+    {pict: 'images/advantages/payment.png', name: 'Платежные методы', text: 'Более 100 платёжных методов.' }
   ]
+
+  advantagesTitle = 'Наши преимущества'
 
 section.advantages
   .container 
     .advantages__inner
-      h2.advantages__title.title 
+      .advantages__box
+        h2.advantages__title.title= advantagesTitle
+        .advantages__line.
+          just color line 
       ul.advantages__list
         for i in advItem
           li.advantages__item

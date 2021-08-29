@@ -1,19 +1,20 @@
 -
   var toolsTitle = 'Наши инструменты'
   var toolsItem = [
-    { logo: 'images/icons/promocodes.png', title: 'Промокоды' },
-    { logo: 'images/icons/api.png', title: 'API' },
-    { logo: 'images/icons/xml.png', title: 'XML интструменты' },
-    { logo: 'images/icons/postbacks.png', title: 'Postbacks' },
-    { logo: 'images/icons/banners.png', title: 'Баннеры с лайв событиями' },
+    { logo: 'images/tools/promocodes.png', title: 'Промокоды' },
+    { logo: 'images/tools/api.png', title: 'API' },
+    { logo: 'images/tools/xml.png', title: 'XML интструменты' },
+    { logo: 'images/tools/postbacks.png', title: 'Postbacks' },
+    { logo: 'images/tools/banners.png', title: 'Баннеры с лайв событиями' },
   ] 
 
 section.tools 
   .container 
     .tools__inner
-      h2#toolsTitle.tools__title= toolsTitle
-      |
-      |
+      .tools__box
+        h2#toolsTitle.tools__title.title= toolsTitle
+        .tools__line.
+          just color line 
       ul.tools__list 
         for i in toolsItem
           |

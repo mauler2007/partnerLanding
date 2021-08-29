@@ -12,6 +12,8 @@
   }
 
   &__link {
+    position: relative;
+    
     color: $white;
     font-family: 'Arial';
     font-size: clamp(10px, 0.8vw, 14px);
@@ -19,11 +21,30 @@
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
 
-    transition: border-color 0.3s linear, color 0.3s linear;
+    transition: color 0.3s linear;
 
-    &:hover {
-      border-bottom: 1px solid $accent;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: auto;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background-color: $accent;
+      transition: width .2s ease-out;
+      right: 0;
     }
+
+    &:hover::after {
+      width: 100%;
+      right: auto;
+      left: 0;
+    }
+
+    // &:hover {
+    //   border-bottom: 1px solid $accent;
+    // }
 
     &:active {
       border-bottom: 1px solid $accent;
@@ -31,7 +52,6 @@
 
     &:focus {
       color: darken($white, 20%);
-
     }
   }
 }

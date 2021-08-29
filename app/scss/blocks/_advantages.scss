@@ -1,0 +1,135 @@
+.advantages {
+  position: relative;
+
+  // transform: translateY(-35px);
+  background-color: $white;
+ 
+  box-shadow: 0px -16px 35px 0px rgba(0, 0, 0, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 1px);
+    width: 100%;
+    height: 36px;
+    left: 0;
+border-radius: 35px 35px 0 0;
+    background-color: $white;
+  }
+
+  &__inner {
+    padding-bottom: 32px;
+    text-align: center;
+  }
+
+  &__box {
+    display: inline-block;
+    // max-width: 50%;
+    margin: 0 auto 3.6em;
+  }
+
+  &__title {
+    padding: 0 1.5em 0.5em;
+    // margin: 0 auto;
+  }
+
+  &__line {
+    position: relative;
+
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 186, 3, 1) 5%, rgba(255, 228, 0, 1) 95%);
+    font-size: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+
+    }
+
+    &::before {
+      left: 0;
+      transform: translateY(-50%) rotate(45deg);
+      background-color: $accent;
+    }
+
+    &::after {
+      right: 0;
+      transform: translateY(-50%) rotate(-135deg);
+      background-color: $yellow;
+    }
+  }
+
+  .title {}
+
+  &__list {
+    display: grid;
+    grid-gap: 2.5em;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    //  grid-template-rows: 250px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: flex-start;
+  }
+
+  &__item {
+    // flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // margin-bottom: 4vw;
+  }
+
+  &__icon-box {
+    height: 8.7vw;
+    margin-bottom: 26px;
+    //  flex: 0 0 auto;
+  }
+
+  &__icon {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  &__name,
+  &__text {
+    color: $text;
+    font-size: clamp(10px, 1em, 15px);
+    line-height: 1.1;
+    @extend %montserrat-700;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    overflow: hidden;
+    // height: 62px;
+
+    @extend %montserrat-400;
+    flex: 1 0 auto;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    // &:after {
+    //   content: "";
+    //   text-align: right;
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 0;
+    //   width: 70%;
+    //   height: 1.2em;
+    //   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+    //   pointer-events: none;
+    // }
+  }
+}
