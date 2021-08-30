@@ -1,0 +1,21 @@
+.icon {
+  &-pt {
+    background-image: url('../images/sprite.png');
+    background-position: 30% 0;
+  }
+
+  &-ru {
+    background-image: url('../images/sprite.png');
+    background-position: 65% 0%;
+  }
+
+  &-tr {
+    background-image: url('../images/sprite.png');
+    background-position: 100% 0%;
+  }
+
+  &-en {
+    background-image: url('../images/sprite.png');
+    background-position: 0 0;
+  }
+}

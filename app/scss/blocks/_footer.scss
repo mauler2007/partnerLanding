@@ -1,3 +1,60 @@
 .footer {
-  visibility: hidden;
+  padding-top: 3.7em;
+  padding-bottom: 4.7em;
+
+  background: linear-gradient(180deg, #383838 0%, #212121 100%);
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.4em;
+  }
+
+  &__copy {
+    text-align: center;
+    margin: 0 auto 1.5em;
+  }
+
+  &__text {
+    font-size: 1.15vw;
+    color: #9B9B9B;
+    line-height: 1.2;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .logo__svg {
+    display: block;
+    width: 270px;
+    height: 34px;
+  }
+
+  .logo__slogan::before {
+    width: 100%;
+  }
+
+  .logo__text {
+    margin-left: auto;
+  }
+
+  .navigation__item {
+
+    &:not(:last-child) {
+      margin-right: 4.4vw;
+    }
+  }
+
+  .navigation__link {
+    font-size: clamp(12px, 1.4vw, 22px);
+    line-height: 1.16;
+  }
 }

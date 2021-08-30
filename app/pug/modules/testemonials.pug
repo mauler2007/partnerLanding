@@ -1,27 +1,31 @@
 -
   var reviewTitle = 'Тестимониалс' 
   var review = [
-    {revText: 'Excellent conversions, amazing player retention, great marketing tools, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.'},
-    {revText: 'We are very satisfied with Casumo, as they offer great and professional collaboratio and very attractive brand. Besides, they also provide excellent support for any questions we might have. Great communication paired with high commission rates and quick payout times make this affiliate program just right for our website https://betting-sites.me.uk/'},
-    {revText: "Casumo is a brand new to us, and we're excited to introduce it to our gamers! So far, we've received excellent feedback, and we're confident that it will continue to improve."},
-    {revText: 'Excellent conversions, amazing player retention, great marketing tools, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.'},
-    {revText: 'Excellent conversions, amazing player retention, great marketing tools, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.'},
-    {revText: 'Excellent conversions, amazing player retention, great marketing tools, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.'},
+    {revText: 'Excellent conversions, amazing player retention, great marketing testemonials, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.' , href: 'www.southafricancasinos.co.za', revLink: 'www.southafricancasinos.co.za'},
+    {revText: 'We are very satisfied with Casumo, as they offer great and professional collaboratio and very attractive brand. Besides, they also provide excellent support for any questions we might have. Great communication paired with high commission rates and quick payout times make this affiliate program just right for our website https://betting-sites.me.uk/' , href: 'betting-sites.me.uk', revLink: 'betting-sites.me.uk'},
+    {revText: "Casumo is a brand new to us, and we're excited to introduce it to our gamers! So far, we've received excellent feedback, and we're confident that it will continue to improve." , href: 'casinosites.ltd.uk', revLink: 'casinosites.ltd.uk'},
+    {revText: 'Excellent conversions, amazing player retention, great marketing testemonials, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.' , href: 'www.southafricancasinos.co.za', revLink: 'www.southafricancasinos.co.za'},
+    {revText: 'Excellent conversions, amazing player retention, great marketing testemonials, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.' , href: 'www.southafricancasinos.co.za', revLink: 'www.southafricancasinos.co.za'},
+    {revText: 'Excellent conversions, amazing player retention, great marketing testemonials, top notch support from a professional affiliate team and prompt payments makes Casumo Affiliates one of our top performing partners. We look forward to continuing our fruitful partnership.' , href: 'www.southafricancasinos.co.za', revLink: 'www.southafricancasinos.co.za'},
   ]
 
-section.tools
+section#testemonials.testemonials
   .container 
-    .tools__inner
-      h2.tools__title 
-      |
-      |
-      ul.tools__list
+    .testemonials__inner
+      .testemonials__box
+        h2.testemonials__title.title= reviewTitle  
+        |
+        |
+        .testemonials__line.line.
+          just color line 
+      ul.testemonials__list
         |
         |
         for i in review
-          li.tools__item 
-            .tools__box 
-              p.tools__text=i.revText
+          li.testemonials__item 
+            .testemonials__frame 
+                p.testemonials__text= i.revText
+            a.testemonials__link(href= i.href)= i.revLink
           |
           |
 

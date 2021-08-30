@@ -4,14 +4,15 @@
   top: 0;
   left: 0;
   right: 0;
+
   background: rgb(41, 41, 41);
   background: linear-gradient(90deg, rgba(41, 41, 41, 1) 0%, rgba(24, 24, 24, 1) 100%);
 
   &--fixed {
 
-    .header__inner {
-      padding: 0.2em;
-    }
+    // .header__inner {
+    //   padding: 0.2em;
+    // }
   }
 
   &__inner {
@@ -31,6 +32,7 @@
   }
 
   &__right {
+
     display: flex;
     align-items: flex-end;
     max-width: 370px;
