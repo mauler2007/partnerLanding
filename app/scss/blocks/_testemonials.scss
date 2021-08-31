@@ -47,17 +47,20 @@
   }
 
   &__list {
-    // display: grid;
-    // grid-gap: 4.9vw;
-    // grid-template-columns: repeat(auto-fit, minmax(414px, 1fr));
-    column-count: 2;
-    column-gap: 4.9vw;
+    display: grid;
+    grid-gap: 0 4.9vw;
+    grid-template-columns: repeat(auto-fit, minmax(414px, 1fr));
+
+    // column-count: 2;
+    // column-gap: 4.9vw;
+    
     text-align: left;
     padding: 0 7.5vw;
   }
 
   &__item {
     margin-bottom: 2.8vw;
+    // flex-basis: 40%;
   }
 
   &__frame {
@@ -88,7 +91,7 @@
   }
 
   .vanta-canvas {
-    width: 100% !important;
     opacity: 0.4;
+    min-height: 100%;
   }
 }

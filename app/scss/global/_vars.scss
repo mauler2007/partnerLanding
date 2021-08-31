@@ -4,7 +4,11 @@ $yellow: #f7e335;
 $black: #000;
 $text:#454545;
 
-$xxl-bp: 1350px;
+$bar-width: 25px;
+$bar-height: 3px;
+$bar-spacing: 5px;
+
+// $xxl-bp: 1350px;
 $desktop-bp: 1124px;
 $tablet-bp: 992px;
 $middle-bp: 768px;
@@ -15,11 +19,13 @@ $mobile-bp: 576px;
     sans-serif;
   font-weight: 700;
 }
+
 %montserrat-500 {
   font-family: 'Montserrat',
     sans-serif;
   font-weight: 500;
 }
+
 %montserrat-400 {
   font-family: 'Montserrat',
     sans-serif;
@@ -42,10 +48,6 @@ $mobile-bp: 576px;
   font-family: 'Betandyou-Main_1',
     sans-serif;
   font-weight: 400;
-}
-
-%round {
-  font-family: 'Rounds', sans-serif;
 }
 
 %visually-hidden {

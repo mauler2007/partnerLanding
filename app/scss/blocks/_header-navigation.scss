@@ -1,5 +1,9 @@
 .navigation {
 
+  @include breakpoint($tablet-bp) {
+    display: none;
+  }
+
   &__list {
     display: flex;
     margin: 0 2vw;
@@ -18,7 +22,7 @@
     color: $white;
     font-family: 'Arial';
     font-size: clamp(10px, 0.8vw, 14px);
-    padding: 5px;
+    padding: 4px;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
 

@@ -9,7 +9,11 @@
     //   display: flex;
     justify-content: space-between;
 
-    //  width: 15.5vw;
+    @include breakpoint($desktop-bp) {
+      max-width: unset;
+      width: auto;
+      padding: 0 1em;
+    }
   }
 
   &__item {
@@ -65,5 +69,4 @@
       border-color: #F40F3E;
     }
   }
-
 }

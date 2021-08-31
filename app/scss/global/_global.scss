@@ -56,6 +56,11 @@ body {
   margin: 0 auto;
   padding: 0 30px;
 
+  @include breakpoint($desktop-bp) {
+    padding: 0 23px;
+  }
+
+
   &--fluid {
     max-width: 100%;
     padding: 0;

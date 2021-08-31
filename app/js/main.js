@@ -1,6 +1,24 @@
 $(function () {
 
 
+  // let hamburger = document.getElementById(hamburger);
+  // let body = document.getElementById(body);
+
+  // hamburger.onclick = function() {
+  //   body.addClass('open-menu');
+  // }
+
+  // $('.header__hamburger').on('click', function() {
+  //   $('.header__inner').toggleClass('open');
+  // })
+
+  (function () {
+    $('.menu-wrapper').on('click', function () {
+      $('.hamburger-menu').toggleClass('animate');
+    })
+  })();
+
+
   //  LOCALISATION  LOCALISATION  LOCALISATION
   const swhithLang = document.querySelectorAll('.langCheck__item:not(.selected) input');
 
