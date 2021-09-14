@@ -1,18 +1,28 @@
 .header {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
+
 
   background: rgb(41, 41, 41);
   background: linear-gradient(90deg, rgba(41, 41, 41, 1) 0%, rgba(24, 24, 24, 1) 100%);
 
   &--fixed {
-
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
     // .header__inner {
     //   padding: 0.2em;
     // }
+  }
+
+  &__empty {
+    height: 0;
+
+    // transition: height 0.9s linear;
+
+    .header__empty.height {
+      // height: 200px;
+    }
   }
 
   &__inner {
@@ -21,9 +31,13 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0.9em 0;
+    // padding: 20px 0;
 
     transition: padding 0.3s linear;
 
+    @include breakpoint($tablet-bp) {
+      position: relative;
+    }
 
     @include breakpoint($mobile-bp) {
       justify-content: center;
@@ -31,21 +45,30 @@
     }
   }
 
-  &__left {
+  &__logo {
 
     @include breakpoint($tablet-bp) {
       margin-right: auto;
     }
+  }
 
-    .logo {
+  &__menu {
 
-      @include breakpoint($tablet-bp) {
-        padding-left: 2.5vw;
-      }
+    @include breakpoint($tablet-bp) {
+      order: 10;
+      position: absolute;
+      top: 100%;
+      left: -22px;
+      right: 0;
+      width: 100%;
+      // height: 190px;
+      background-color: lighten($color: #292929, $amount: 0.93);
+      z-index: 10;
+      width: 50%;
     }
   }
 
-  .menu-wrapper {
+  .hamburger-wrapper {
     display: none;
     // background-color: transparent;
     // border: none;
@@ -120,17 +143,19 @@
     transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  &__right {
+  &__action {
+    position: relative;
 
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 26vw;
+    // width: 26vw;
     // width: 100%;
     justify-content: space-between;
+    padding-right: 120px;
 
     @include breakpoint($desktop-bp) {
-      width: 28vw;
+      // width: 28vw;
     }
 
     @include breakpoint($tablet-bp) {

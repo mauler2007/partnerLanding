@@ -1,22 +1,185 @@
 $(function () {
 
+  const header = document.querySelector('.header');
+  let heightHeader = document.querySelector('.header').offsetHeight + 'px';
+  const pseudoHeader = document.createElement('div');
+  pseudoHeader.classList.add('header__empty');
+  document.body.insertBefore(pseudoHeader, header);
 
-  // let hamburger = document.getElementById(hamburger);
-  // let body = document.getElementById(body);
+  window.addEventListener('scroll', function () {
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    header.classList.add('header--fixed');
+    // heightHeader +='px';
 
-  // hamburger.onclick = function() {
-  //   body.addClass('open-menu');
-  // }
+    if (scrolled == 0) {
+      pseudoHeader.style.height = '0'
 
-  // $('.header__hamburger').on('click', function() {
-  //   $('.header__inner').toggleClass('open');
-  // })
+      header.classList.remove('header--fixed');
+      console.log(heightHeader);
+      // pseudoHeader.style.setProperty("height", heightHeader);
 
-  (function () {
-    $('.menu-wrapper').on('click', function () {
-      $('.hamburger-menu').toggleClass('animate');
-    })
-  })();
+      // heightHeader += --heightHeader
+      // console.log(`--heightHeader`);
+
+      // pseudoHeader.style.height = `${heightHeader}px`
+
+      // пробовал так  
+      // pseudoHeader.setProperty('height', heightHeader );
+      // и так
+      // Object.assign(pseudoHeader.style, {
+      //   height: '1500px'
+      // });
+      //  так  тоже попробовал и оказалось что даже класс не  накидывает
+      // pseudoHeader.classList.add('height');
+    } else if (scrolled > 0) {
+      pseudoHeader.style.setProperty("height", heightHeader);
+
+      // pseudoHeader.style.setProperty("height", heightHeader);
+      // pseudoHeader.style.setProperty("height", 0);
+    }
+  });
+
+  let menuItems = document.querySelectorAll('.navigation__link');
+  console.log(menuItems);
+
+  let cleanActive = menuItems.forEach(function (item, i, arr) {
+    // console.log(menuItems[i]);
+
+    item.classList.remove('active')
+  });
+
+  let toggleActive = menuItems.forEach(function (item, i, arr) {
+console.log(item);
+
+    // if (item) {
+    //   menuItems[i].classList.add('active');
+    //   console.log(menuItems[i]);
+    // } else {
+    //   cleanActive();
+    // };
+  });
+  // toggleActive();
+
+  // menuItems.addEventListener('click', toggleActive)
+
+  // menuItems[i].addEventListener('click', function () {
+  //   // console.log(menuItems[i]);
+
+
+  //   if (menuItems[i].classList.contains('active')) {
+  //     console.log(menuItems[i]);
+
+  //     // return;
+  //   }
+
+
+  // });
+
+
+
+  // function () {
+  //   $('.hamburger-wrapper').on('click', function () {
+  //     $('.hamburger-menu').toggleClass('animate');
+  //   })
+  // // })();
+
+  const b = document.querySelector(".registration__new-user");
+
+  b.addEventListener("mouseover", function () {
+    let i = 1;
+    setInterval(function () {
+      if (i > 0) {
+        i = i - 0.009;
+        b.style.setProperty("--a", i);
+        b.style.setProperty("--b", i);
+      }
+    }, 1);
+  });
+
+  b.addEventListener("mouseout", function () {
+    let i = 0;
+    setInterval(function () {
+      if (i < 1) {
+        i = i + 0.009;
+        b.style.setProperty("--a", i);
+        b.style.setProperty("--b", i);
+      }
+    }, 1);
+  });
+
+  const c = document.querySelector(".registration__old-user ");
+
+  c.addEventListener("mouseover", function () {
+    let i = 1;
+    setInterval(function () {
+      if (i > 0) {
+        i = i - 0.009;
+        c.style.setProperty("--c", i);
+        c.style.setProperty("--d", i);
+      }
+    }, 1);
+  });
+
+  c.addEventListener("mouseout", function () {
+    let i = 0;
+    setInterval(function () {
+      if (i < 1) {
+        i = i + 0.009;
+        c.style.setProperty("--c", i);
+        c.style.setProperty("--d", i);
+      }
+    }, 1);
+  });
+
+
+  let e = document.querySelector(".top .button__link");
+
+  e.addEventListener("mouseover", function () {
+    let i = 1;
+    setInterval(function () {
+      if (i > 0) {
+        i = i - 0.009;
+        e.style.setProperty("--e", i);
+        e.style.setProperty("--f", i);
+      }
+    }, 5);
+  });
+
+  e.addEventListener("mouseout", function () {
+    let i = 0;
+    setInterval(function () {
+      if (i < 1) {
+        i = i + 0.009;
+        e.style.setProperty("--e", i);
+        e.style.setProperty("--f", i);
+      }
+    }, 5);
+  });
+
+
+  let g = document.querySelector(".banner-section .button__link");
+
+  g.addEventListener("mouseover", function () {
+    let i = 1;
+    setInterval(function () {
+      if (i > 0) {
+        i = i - 0.009;
+        g.style.setProperty("--g", i);
+        g.style.setProperty("--h", i);
+      }
+    }, 5);
+  });
+
+  g.addEventListener("mouseout", function () {
+    let i = 0;
+    setInterval(function () {
+      if (i < 1) {
+        i = i + 0.009;
+        g.style.setProperty("--g", i);
+        g.style.setProperty("--h", i);
+      }
+    }, 5);
+  });
 
 
   //  LOCALISATION  LOCALISATION  LOCALISATION
@@ -98,20 +261,20 @@ $(function () {
     })
   })
 
-    //  SWHITCH LOCALISATION  SWHITCH 
+  //  SWHITCH LOCALISATION  SWHITCH 
 
-    //  класс для хедера при скроле
+  //  класс для хедера при скроле
 
-$(window).scroll(function () {
-  var height = $(window).scrollTop();
-  /*Если сделали скролл на 100px задаём новый класс для header*/
-  if (height > 100) {
-    $('.header').addClass('header--fixed');
-  } else {
-    /*Если меньше 100px удаляем класс для header*/
-    $('.header').removeClass('header--fixed');
-  }
-});
+  // $(window).scroll(function () {
+  //   var height = $(window).scrollTop();
+  //   /*Если сделали скролл на 100px задаём новый класс для header*/
+  //   if (height > 100) {
+  //     $('.header').addClass('header--fixed');
+  //   } else {
+  //     /*Если меньше 100px удаляем класс для header*/
+  //     $('.header').removeClass('header--fixed');
+  //   }
+  // });
 
   VANTA.NET({
     el: "#testemonials",
@@ -159,35 +322,35 @@ $(window).scroll(function () {
   // var three = document.getElementById('instructionNumberThree');
   // var four = document.getElementById('instructionNumberFour');
 
-  
-  
-      // $(window).scroll(function () {
-      //   ($(window).scrollTop() > 10);
-  
-      //   setTimeout(function () {
-  
-      //     one.classList.add("active");
-  
-      //   }, 50);
-  
-      //   setTimeout(function () {
-  
-      //     two.classList.add("active");
-  
-      //   }, 250);
-  
-      //   setTimeout(function () {
-  
-      //     three.classList.add("active");
-  
-      //   }, 450);
-      //   setTimeout(function () {
-  
-      //     four.classList.add("active");
-  
-      //   }, 650);
-  
-      // });
+
+
+  // $(window).scroll(function () {
+  //   ($(window).scrollTop() > 10);
+
+  //   setTimeout(function () {
+
+  //     one.classList.add("active");
+
+  //   }, 50);
+
+  //   setTimeout(function () {
+
+  //     two.classList.add("active");
+
+  //   }, 250);
+
+  //   setTimeout(function () {
+
+  //     three.classList.add("active");
+
+  //   }, 450);
+  //   setTimeout(function () {
+
+  //     four.classList.add("active");
+
+  //   }, 650);
+
+  // });
 
 
 

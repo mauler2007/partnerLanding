@@ -8,11 +8,15 @@ $bar-width: 25px;
 $bar-height: 3px;
 $bar-spacing: 5px;
 
-// $xxl-bp: 1350px;
+$xxl-bp: 1500px;
 $desktop-bp: 1124px;
 $tablet-bp: 992px;
 $middle-bp: 768px;
 $mobile-bp: 576px;
+
+// :root {
+//   --heightHeader: 0;
+// }
 
 %montserrat-700 {
   font-family: 'Montserrat',

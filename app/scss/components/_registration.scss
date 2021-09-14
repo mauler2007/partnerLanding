@@ -4,15 +4,17 @@
 
   &__items {
     display: flex;
-    max-width: 18.5vw;
+    // max-width: 18.5vw;
     width: 100%;
     //   display: flex;
     justify-content: space-between;
 
+    // padding: 0 1em 0 0;
+
     @include breakpoint($desktop-bp) {
       max-width: unset;
       width: auto;
-      padding: 0 1em;
+      // padding: 0 1em;
     }
   }
 
@@ -25,11 +27,11 @@
 
   &__btn {
     display: inline-block;
-    font-size: clamp(10px, 0.83vw, 14px);
+    font-size: clamp(10px, 0.83vw, 12px);
     font-weight: 700;
     color: $white;
     text-transform: uppercase;
-
+    // background-position: 0 0;
     box-shadow: none;
     background: transparent;
     border: none;
@@ -37,10 +39,7 @@
     border-radius: 0.6em;
 
     transition: background 0.3s linear, border-color 0.3s linear;
-
-    &:hover {
-      background: transparent;
-    }
+    cursor: pointer;
 
     &:focus {
       color: $black;
@@ -53,7 +52,10 @@
 
   &__new-user {
     padding: 0.8em 2.1em;
-    background: linear-gradient(90deg, #0354FF -0.35%, #1795F9 99.55%), ;
+    // background: linear-gradient(90deg, rgb(3, 84, 255) -0.35%, rgb(23, 149, 249) 99.55%);
+    --a: 1;
+    --b: 1;
+    background-image: linear-gradient(rgba(3, 84, 255, var(--a)) -0.35%, rgba(23, 149, 249, var(--b)) 99.55%);
 
     &:hover {
       border-color: #0558FF;
@@ -62,8 +64,10 @@
 
   &__old-user {
     padding: 0.8em 1.3em;
-    background: linear-gradient(90deg, #F40F3E 12.25%, #FFA09F 138%);
-
+    background: linear-gradient(90deg, rgb(244, 15, 62) 12.25%, rgb(255, 160, 159) 138%);
+    --c: 1;
+    --d: 1;
+    background-image: linear-gradient(rgba(244, 15, 62, var(--c)) -12.25%, rgba(255, 160, 159, var(--d)) 138%);
 
     &:hover {
       border-color: #F40F3E;

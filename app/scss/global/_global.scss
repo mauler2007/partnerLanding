@@ -84,31 +84,43 @@ footer {
   // flex-shrink: 0;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5em 0.9em;
-  color: $white;
-  font-size: 1.74vw;
-  @extend %montserrat-500;
-  line-height: 1.28;
-  border-radius: 6.36em;
-  background: linear-gradient(88.64deg, #FFBA03 0%, rgba(55, 55, 55, 0.45) 240.37%);
-  box-shadow: -10px 13px 41px -20px #FFBA03;
-  border: 1px solid transparent;
+.button {
 
-  transition: background-color 0.3s linear, border-color 0.3s linear, color 0.3s linear;
+  &__link {
+    display: inline-block;
+    padding: 0.5em 0.9em;
+    color: $white;
+    // font-size: 1.74vw;
+    font-size: clamp(20px, 1.74vw, 30px);
+    @extend %montserrat-500;
+    line-height: 1.28;
+    border-radius: 6.36em;
+    // background: linear-gradient(88.64deg, #FFBA03 0%, rgba(55, 55, 55, 0.45) 240.37%);
+    box-shadow: -10px 13px 41px -20px #FFBA03;
+    border: 1px solid transparent;
 
-  &:hover {
-    border-color: $accent;
-    background: transparent;
-    color: $accent // background: linear-gradient(88.64deg, rgba(55, 55, 55, 0.45) 0%, #FFBA03 240.37%);
-  }
+    transition: background-color 0.3s linear, border-color 0.3s linear, color 0.3s linear;
 
-  &:active {}
+    --e: 1;
+    --f: 1;
+    --g: 1;
+    --h: 1;
+    background-image: linear-gradient(rgba(255, 186, 3, var(--e)) 0%, rgba(55, 55, 55, var(--f)) 240.37%);
 
-  &:focus {
-    background-color: darken($accent, 15%);
-    color: $black;
+    &:hover {
+      border-color: $accent;
+      // background: transparent;
+      color: $accent // background: linear-gradient(88.64deg, rgba(55, 55, 55, 0.45) 0%, #FFBA03 240.37%);
+    }
+
+    &:active {
+      background-color: darken($accent, 15%);
+    }
+
+    &:focus {
+      background-color: darken($accent, 15%);
+      color: $black;
+    }
   }
 }
 

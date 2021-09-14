@@ -1,8 +1,28 @@
 .logo {
   display: flex;
   align-items: center;
+
   // flex-direction: column;
   // align-items: flex-end;
+  @include breakpoint($tablet-bp) {
+    padding-left: 2.5vw;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($desktop-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    @include breakpoint($tablet-bp) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 
   &__svg {
     width: 136px;
@@ -49,6 +69,7 @@
         width: 25.85vw;
         height: 2.04vw;
       }
+
       // @include breakpoint($middle-bp) {
       //   width: 144px;
       //   height: 12px;
@@ -66,8 +87,9 @@
     text-transform: uppercase;
 
     @include breakpoint($tablet-bp) {
-      font-size: 2vw;
+      font-size: clamp(12px,1.5vw, 14px);
     }
+
     // @include breakpoint($mobile-bp) {
     //   font-size: 9px;
     //      }
