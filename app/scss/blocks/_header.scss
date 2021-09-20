@@ -1,6 +1,4 @@
 .header {
-
-
   background: rgb(41, 41, 41);
   background: linear-gradient(90deg, rgba(41, 41, 41, 1) 0%, rgba(24, 24, 24, 1) 100%);
 
@@ -41,7 +39,7 @@
 
     @include breakpoint($mobile-bp) {
       justify-content: center;
-      padding: 0.3em 0;
+      // padding: 0.3em 0;
     }
   }
 
@@ -55,16 +53,27 @@
   &__menu {
 
     @include breakpoint($tablet-bp) {
-      order: 10;
       position: absolute;
+      order: 10;
       top: 100%;
-      left: -22px;
+      left: -200%;
+      left: -23px;
       right: 0;
-      width: 100%;
-      // height: 190px;
-      background-color: lighten($color: #292929, $amount: 0.93);
       z-index: 10;
+      transform: translateX(-200%);
+      // width: 100%;
       width: 50%;
+      // height: 190px;
+      transition: transform 0.5s linear, opacity 0.3s linear;
+      opacity: 0;
+      background-color: lighten($color: #292929, $amount: 0.93);
+    }
+
+    &--opened {
+      opacity: 1;
+      // transition: opacity 0.3 ease-in-out;
+      transform: translateX(0);
+      // left: -23px;
     }
   }
 
@@ -155,10 +164,10 @@
     padding-right: 120px;
 
     @include breakpoint($desktop-bp) {
-      // width: 28vw;
     }
-
+    
     @include breakpoint($tablet-bp) {
+      padding-right: 0;
       width: auto;
     }
   }

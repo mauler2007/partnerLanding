@@ -39,49 +39,83 @@ $(function () {
     }
   });
 
-  let menuItems = document.querySelectorAll('.navigation__link');
-  console.log(menuItems);
+  // const menuItems = document.querySelector('.navigation__list');
 
-  let cleanActive = menuItems.forEach(function (item, i, arr) {
-    // console.log(menuItems[i]);
-
-    item.classList.remove('active')
-  });
-
-  let toggleActive = menuItems.forEach(function (item, i, arr) {
-console.log(item);
-
-    // if (item) {
-    //   menuItems[i].classList.add('active');
-    //   console.log(menuItems[i]);
-    // } else {
-    //   cleanActive();
-    // };
-  });
-  // toggleActive();
-
-  // menuItems.addEventListener('click', toggleActive)
-
-  // menuItems[i].addEventListener('click', function () {
-  //   // console.log(menuItems[i]);
-
-
-  //   if (menuItems[i].classList.contains('active')) {
-  //     console.log(menuItems[i]);
-
-  //     // return;
-  //   }
-
-
-  // });
-
-
-
-  // function () {
-  //   $('.hamburger-wrapper').on('click', function () {
-  //     $('.hamburger-menu').toggleClass('animate');
+  // menuItems.addEventListener('click', function (e) {
+  //   const items = document.querySelectorAll('.navigation__link')
+  //   const target = e.target
+  //   Array.from(items).forEach(item => {
+  //     item.classList.remove('active')
   //   })
-  // // })();
+  //   target.classList.add('active')
+  // })
+
+
+  // Получаю   NodeList в переменную
+  let listOfItems = document.querySelectorAll('.navigation__link');
+  console.log(listOfItems);
+
+  // присваиваю  в качестве значения переменной анонимную функцию (Function Expression), которая в качестве аргумента принимает только  массив arr
+  let removeClassActive = function (arrayOfElements) {
+    //  перебираю  NodeList циклом 
+    arrayOfElements.forEach(function (currentElem, elemIndex, arrayOfElements) {
+      // убираю у каждого элемента класс active
+      currentElem.classList.remove('active');
+    })
+  };
+
+  // присваиваю  в качестве значения переменной анонимную функцию  которая  принимает  в качестве аргумента Текущий  элемент  
+  let addClassActive = function (currentElem) {
+  // добавляю  у текущего элемента класс active
+    currentElem.classList.add('active');
+  };
+  
+  //  прохожусь снова по ноде циклом и вешаю обработчик события клика на Текущий  элемент
+  listOfItems.forEach(function (currentElem, elemIndex, arrayOfElements) {
+    currentElem.addEventListener('click', function () {
+  //  вызываю ф-ю  для удаления класса  со всех перебираемых элементов массива
+      removeClassActive(arrayOfElements);
+  //  вызываю ф-ю  для добавления класса   обьекту на котором сработал обработчик 
+      addClassActive(currentElem);
+    })
+  });
+
+  
+
+
+  (function () {
+    $('.hamburger-wrapper').on('click', function () {
+      $('.hamburger-menu').toggleClass('animate');
+    })
+  })();
+
+  let drop = document.querySelector('.drop');
+
+  let addActiveClass =  function (myElem) {
+    myElem.addEventListener('click', function() {
+      myElem.classList.toggle('active');
+    })
+  };
+
+  addActiveClass(drop);
+  
+
+  let hamburger = document.querySelector('.hamburger-wrapper');
+  let headerMenu = document.querySelector('.header__menu');
+
+  hamburger.addEventListener('click', function() {
+    headerMenu.classList.toggle('header__menu--opened')
+  });
+
+
+
+  // addActiveClass(hamburger);
+  
+  // drop.addEventListener('click', function () {
+  //   drop.classList.toggle('active');
+  // })
+
+
 
   const b = document.querySelector(".registration__new-user");
 
@@ -142,7 +176,7 @@ console.log(item);
         e.style.setProperty("--e", i);
         e.style.setProperty("--f", i);
       }
-    }, 5);
+    }, 1);
   });
 
   e.addEventListener("mouseout", function () {
@@ -153,7 +187,7 @@ console.log(item);
         e.style.setProperty("--e", i);
         e.style.setProperty("--f", i);
       }
-    }, 5);
+    }, 1);
   });
 
 
@@ -167,7 +201,7 @@ console.log(item);
         g.style.setProperty("--g", i);
         g.style.setProperty("--h", i);
       }
-    }, 5);
+    }, 1);
   });
 
   g.addEventListener("mouseout", function () {
@@ -178,7 +212,7 @@ console.log(item);
         g.style.setProperty("--g", i);
         g.style.setProperty("--h", i);
       }
-    }, 5);
+    }, 1);
   });
 
 
@@ -354,34 +388,6 @@ console.log(item);
 
 
 
-
-  // document.addEventListener("mousemove", parallax);
-  // const elem = document.querySelector("#parallax");
-  // // Magic happens here
-  // function parallax(e) {
-  //   let _w = window.innerWidth / 2;
-  //   let _h = window.innerHeight / 2;
-  //   let _mouseX = e.pageX;
-  //   let _mouseY = e.pageY;
-  //   let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY + _h) * 0.01}%`;
-  //   let x = `${_depth1}`;
-  //   console.log(x);
-  //   elem.style.backgroundPosition = x;
-  // }
-
-
-
-  // document.addEventListener("mousemove", parallax);
-  // function parallax(e) {
-  //   this.querySelectorAll('.layer').forEach(layer => {
-  //     const speed = layer.getAttribute('data-speed')
-
-  //     const x = (window.innerWidth - e.pageX*speed/100)
-  //     const y = (window.innerWidth - e.pageY*speed/100)
-
-  //     layer.style.transform = `translateX(${x}px) translateY(${y}px)`
-  //   })
-  // }
 
 
   // ThisIsWebP().then(function () {

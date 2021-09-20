@@ -46,6 +46,13 @@
     margin-left: auto;
   }
 
+  .navigation__list {
+
+    @include breakpoint($tablet-bp) {
+      flex-direction: row;
+    }
+  }
+
   .navigation__item {
 
     &:not(:last-child) {
@@ -56,5 +63,13 @@
   .navigation__link {
     font-size: clamp(12px, 1.4vw, 22px);
     line-height: 1.16;
+
+    &::before,
+    &::after {
+
+      @include breakpoint($tablet-bp) {
+        display: none;
+      }
+    }
   }
 }

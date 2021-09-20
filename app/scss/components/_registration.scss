@@ -57,6 +57,10 @@
     --b: 1;
     background-image: linear-gradient(rgba(3, 84, 255, var(--a)) -0.35%, rgba(23, 149, 249, var(--b)) 99.55%);
 
+    @include breakpoint($mobile-bp) {
+      padding: 0.5em 1.1em;
+    }
+
     &:hover {
       border-color: #0558FF;
     }
@@ -68,6 +72,10 @@
     --c: 1;
     --d: 1;
     background-image: linear-gradient(rgba(244, 15, 62, var(--c)) -12.25%, rgba(255, 160, 159, var(--d)) 138%);
+
+    @include breakpoint($mobile-bp) {
+      padding: 0.5em 1.1em;
+    }
 
     &:hover {
       border-color: #F40F3E;

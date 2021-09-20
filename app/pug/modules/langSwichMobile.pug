@@ -1,0 +1,58 @@
+.drop
+  p.drop__title
+    span.drop__rotate
+      span.drop__marker
+    | язык
+  form#drop__form.drop__form(action='/')(name='dropDownForm')
+    ul.drop__list
+      li.drop__item
+        label.drop__label
+          input.drop__input.visually-hidden(type='checkbox')
+          span.drop__myInput.
+            Английский
+      li.drop__item
+        label.drop__label
+          input.drop__input.visually-hidden(type='checkbox')
+          span.drop__myInput.
+            Испанский
+      li.drop__item
+        label.drop__label
+          input.drop__input.visually-hidden(type='checkbox')
+          span.drop__myInput.
+            Арабский
+      li.drop__item
+        label.drop__label
+          input.drop__input.visually-hidden(type='checkbox')
+          span.drop__myInput.
+            Русский
+//- mixin changeLang
+//- mixin checkRow(id,langValue,status)
+//-   label.drop-down__label
+//-     input.drop-down__input(type='checkbox', id={id})
+//-     |
+//-     |
+//-     span.drop-down__marker
+//-     |
+//-     |
+//-     span.drop-down__switcher
+
+//- .drop-down
+//-   .drop-down__wrapper 
+//-     p.drop-down__title.
+//-       язык
+//-     |
+//-     |
+//-     form#drop-down__form.drop-down__form(action='/')(name='dropDownForm')
+//-       |
+//-       |
+//-       +checkRow()
+//-       |
+//-       |
+//-       +checkRow()
+//-       |
+//-       |
+//-       +checkRow()
+//-       |
+//-       |
+//-       +checkRow()
+

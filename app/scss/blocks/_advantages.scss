@@ -55,6 +55,10 @@
     flex-direction: column;
     align-items: center;
     // margin-bottom: 4vw;
+
+    @include breakpoint($middle-bp) {
+      width: 50%;
+    }
   }
 
   &__icon-box {
@@ -76,6 +80,10 @@
     font-size: clamp(10px, 1em, 15px);
     line-height: 1.1;
     @extend %montserrat-700;
+
+    @include breakpoint($middle-bp) {
+      padding: 0 3em;
+    }
   }
 
   &__name {
