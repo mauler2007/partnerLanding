@@ -2,6 +2,7 @@
   position: relative;
 
   // transform: translateY(-35px);
+  scroll-margin-top: 83px;
   background-color: $white;
 
   box-shadow: 0px -16px 35px 0px rgba(0, 0, 0, 1);
@@ -26,10 +27,16 @@
     display: inline-block;
     // max-width: 50%;
     margin: 0 auto 3.6em;
+
+    @include breakpoint($mobile-bp) {
+    margin-bottom: 40px;
+    }
   }
 
   &__title {
-    padding: 0 1.5em 0.5em;
+    // padding: 0 1.5em 0.5em;
+
+  
     // margin: 0 auto;
   }
 
@@ -45,6 +52,14 @@
     justify-content: space-between;
     flex-wrap: wrap;
     // justify-content: flex-start;
+
+    &.open {
+
+      .advantages__item:nth-child(n+4) {
+        // display: none;
+        display: flex;
+      }
+    }
   }
 
   &__item {
@@ -57,7 +72,19 @@
     // margin-bottom: 4vw;
 
     @include breakpoint($middle-bp) {
-      width: 50%;
+      min-width: 50%;
+    }
+
+    @include breakpoint($mobile-bp) {
+      min-width: 100%;
+
+    }
+
+    &:nth-child(n+4) {
+
+
+      display: none;
+
     }
   }
 
@@ -72,6 +99,10 @@
   &__icon {
     object-fit: cover;
     height: 100%;
+
+    @include breakpoint($mobile-bp) {
+      margin: 0 auto;
+    }
   }
 
   &__name,
@@ -121,5 +152,53 @@
     //   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
     //   pointer-events: none;
     // }
+  }
+
+  &__show-hide {
+    display: none;
+
+    @include breakpoint($mobile-bp) {
+      display: flex;
+      margin: 0 auto;
+
+      border: none;
+      background-color: transparent;
+    }
+
+    &.open {
+
+      &+button {
+        display: none;
+      }
+
+      // .advantages__show-icon {
+      //   transform: rotate(180deg);
+      // // }// .advantages__show-icon {
+      // //   transform: rotate(180deg);
+      // }
+    }
+  }
+
+  &__show-text {
+    padding-right: 10px;
+
+    font-size: clamp(14px, 3vw, 19px);
+    color: $text;
+    @extend %montserrat-400;
+  }
+
+  &__show-icon {
+    display: inline-block;
+    transition: transform 0.3s linear;
+    // transform: rotate(10deg);
+  }
+
+  &__show-svg {
+    width: 16px;
+    height: 16px;
+
+    use {
+      stroke: $text;
+    }
   }
 }

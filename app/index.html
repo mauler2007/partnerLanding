@@ -29,16 +29,16 @@
           <div class="header__menu">
             <nav class="navigation"> 
               <ul class="navigation__list"> 
-                            <li class="navigation__item"><a class="navigation__link active" href="#">о нас</a>
+                            <li class="navigation__item"><a class="navigation__link active" href="#advantages">о нас</a>
                             </li>
                             
-                            <li class="navigation__item"><a class="navigation__link" href="#">контакты</a>
+                            <li class="navigation__item"><a class="navigation__link" href="#contacts">контакты</a>
                             </li>
                             
                             <li class="navigation__item"><a class="navigation__link" href="#">faq</a>
                             </li>
                             
-                            <li class="navigation__item"><a class="navigation__link" href="#">инструменты</a>
+                            <li class="navigation__item"><a class="navigation__link" href="#tools">инструменты</a>
                             </li>
                             
                             <li class="navigation__item"><a class="navigation__link" href="#">условия</a>
@@ -64,12 +64,32 @@
                     </li>
                     <li class="drop__item">
                       <label class="drop__label">
-                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Арабский</span>
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Русский</span>
                       </label>
                     </li>
                     <li class="drop__item">
                       <label class="drop__label">
-                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Русский</span>
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Португальский</span>
+                      </label>
+                    </li>
+                    <li class="drop__item">
+                      <label class="drop__label">
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Португальский Бр</span>
+                      </label>
+                    </li>
+                    <li class="drop__item">
+                      <label class="drop__label">
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Испанский</span>
+                      </label>
+                    </li>
+                    <li class="drop__item">
+                      <label class="drop__label">
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Немецкий</span>
+                      </label>
+                    </li>
+                    <li class="drop__item">
+                      <label class="drop__label">
+                        <input class="drop__input visually-hidden" type="checkbox"><span class="drop__myInput">Французкий</span>
                       </label>
                     </li>
                   </ul>
@@ -82,13 +102,9 @@
               <div class="registration__items">
                 
                 
-                <div class="registration__item"> 
-                  <button class="registration__btn registration__new-user" type="button">регистрация </button>
-                </div>
+                <div class="registration__item"> <a class="registration__btn registration__new-user" type="button" href="https://betandyou.partners/ru/sign-up">регистрация </a></div>
                 
-                <div class="registration__item"> 
-                  <button class="registration__btn registration__old-user" type="button">вход</button>
-                </div>
+                <div class="registration__item"> <a class="registration__btn registration__old-user" type="button" href="https://betandyou.partners/ru/sign-in">вход</a></div>
               </div>
             </div>
             <div class="langCheck">
@@ -136,7 +152,7 @@
           </div>
           <div class="top__img-box"></div>
         </section>
-        <section class="advantages">
+        <section class="advantages" id="advantages">
           <div class="container"> 
             <div class="advantages__inner">
               <div class="advantages__box">
@@ -185,6 +201,9 @@
                   <p class="advantages__text">Более 100 платёжных методов.</p>
                 </li>
               </ul>
+              <button class="advantages__show-hide"><span class="advantages__show-text">Ещё </span><span class="advantages__show-icon">
+                  <svg class="advantages__show-svg">
+                     <use xlink:href="images/sprite.svg#icon-down"></use></svg></span></button>
             </div>
           </div>
         </section>
@@ -199,7 +218,7 @@
           </div>
         </section>
          
-        <section class="tools"> 
+        <section class="tools" id="tools"> 
           <div class="container"> 
             <div class="tools__inner">
               <div class="tools__box">
@@ -300,7 +319,7 @@
             </div>
           </div>
         </section>
-        <section class="contacts">
+        <section class="contacts" id="contacts">
           <div class="container"> 
             <div class="contacts__inner">
               <div class="contacts__box">
@@ -314,21 +333,21 @@
                     <svg class="contacts__svg"> 
                       <use xlink:href="images/sprite.svg#icon-skype"></use>
                     </svg>
-                  </div><a class="contacts__text" href="#">live:.cid.3df81dae8872f81c</a>
+                  </div><a class="contacts__text" href="live:.cid.3df81dae8872f81c">live:.cid.3df81dae8872f81c</a>
                 </div>
                 <div class="contacts__row">
                   <div class="contacts__image"> 
                     <svg class="contacts__svg"> 
                       <use xlink:href="images/sprite.svg#icon-telegramm"></use>
                     </svg>
-                  </div><a class="contacts__text" href="#">@BetAndYouPartners</a>
+                  </div><a class="contacts__text" href="https://telegram.me/BetAndYouPartners">@BetAndYouPartners</a>
                 </div>
                 <div class="contacts__row">
                   <div class="contacts__image"> 
                     <svg class="contacts__svg"> 
                       <use xlink:href="images/sprite.svg#icon-mail"></use>
                     </svg>
-                  </div><a class="contacts__text" href="#">support@betandyou.partners</a>
+                  </div><a class="contacts__text" href="mailto:support@betandyou.partners">support@betandyou.partners</a>
                 </div>
                 <div class="contacts__row">
                   <div class="contacts__image"> 
@@ -354,50 +373,48 @@
     <footer class="footer">
       <div class="container"> 
         <div class="footer__inner"> 
-          <div class="footer__top">
-            <div class="logo"> <a href="#">
-                <svg class="logo__svg"> 
-                  <use xlink:href="images/sprite.svg#icon-logo"></use>
+          <div class="logo"> <a href="https://betandyou.partners/ru/sign-in">
+              <svg class="logo__svg"> 
+                <use xlink:href="images/sprite.svg#icon-logo"></use>
+              </svg>
+              <div class="logo__slogan"> 
+                <p class="logo__text min-font">partners</p>
+                
+                <svg class="logo__hand"> 
+                  <use xlink:href="images/sprite.svg#icon-hand"></use>
                 </svg>
-                <div class="logo__slogan"> 
-                  <p class="logo__text min-font">partners</p>
-                  
-                  <svg class="logo__hand"> 
-                    <use xlink:href="images/sprite.svg#icon-hand"></use>
-                  </svg>
-                </div></a></div>
-            <nav class="navigation"> 
-              <ul class="navigation__list"> 
-                            <li class="navigation__item"><a class="navigation__link active" href="#">о нас</a>
-                            </li>
-                            
-                            <li class="navigation__item"><a class="navigation__link" href="#">условия</a>
-                            </li>
-                            
-                            <li class="navigation__item"><a class="navigation__link" href="#">контакты</a>
-                            </li>
-                            
-                            <li class="navigation__item"><a class="navigation__link" href="#">новости</a>
-                            </li>
-                            
-              </ul>
-            </nav>
-          </div>
+              </div></a></div>
+          <nav class="navigation"> 
+            <ul class="navigation__list"> 
+                        <li class="navigation__item"><a class="navigation__link active" href="#advantages">о нас</a>
+                        </li>
+                        
+                        <li class="navigation__item"><a class="navigation__link" href="#">условия</a>
+                        </li>
+                        
+                        <li class="navigation__item"><a class="navigation__link" href="#contacts">контакты</a>
+                        </li>
+                        
+                        <li class="navigation__item"><a class="navigation__link" href="#">новости</a>
+                        </li>
+                        
+            </ul>
+          </nav>
           <div class="footer__copy">
             <p class="footer__text">Copyright © 2019 - 2021 «BETANDYOU»</p>
             <p class="footer__text">All rights reserved and protected by law.</p>
           </div>
           <div class="footer__socials">
             <ul class="socials">
-              <li class="socials__item"> <a class="socials__link" href="#">
+              <li class="socials__item"> <a class="socials__link" href="https://www.facebook.com/betandyouinfo">
                   <svg class="socials__icon"> 
                     <use xlink:href="images/sprite.svg#icon-fb"></use>
                   </svg></a></li>
-              <li class="socials__item"> <a class="socials__link" href="#">
+              <li class="socials__item"> <a class="socials__link" href="https://www.instagram.com/_betandyou_">
                   <svg class="socials__icon"> 
                     <use xlink:href="images/sprite.svg#icon-instagramm"></use>
                   </svg></a></li>
-              <li class="socials__item"> <a class="socials__link" href="#">
+              <li class="socials__item"> <a class="socials__link" href="https://t.me/betandyouofficial">
                   <svg class="socials__icon"> 
                     <use xlink:href="images/sprite.svg#icon-telegramm"></use>
                   </svg></a></li>

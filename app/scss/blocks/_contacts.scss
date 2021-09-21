@@ -1,10 +1,15 @@
 .contacts {
+  scroll-margin-top: 83px;
   padding-bottom: 5em;
 
   background-image: url('../images/contacts-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include breakpoint($mobile-bp) {
+    background-image: url('../images/contactsMobile-bg.jpg');
+  }
 
   &__inner {
     padding-bottom: 32px;
@@ -15,6 +20,10 @@
   &__box {
     display: inline-block;
     margin: 0 auto 3.6em;
+
+    @include breakpoint($mobile-bp) {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -26,12 +35,20 @@
     width: 40vw;
 
     font-style: normal;
+
+    @include breakpoint($mobile-bp) {
+      width: 100%;
+    }
   }
 
   &__row {
     display: flex;
     align-items: center;
     margin-bottom: 2.5em;
+
+    @include breakpoint($mobile-bp) {
+      margin-bottom: 34px;
+    }
 
     // &:first-child {
     //   .contacts__image {
@@ -63,6 +80,11 @@
 
     border-radius: 50%;
     background: linear-gradient(346deg, #ffbc00 0%, #f7e335 70%);
+
+    @include breakpoint($mobile-bp) {
+      min-width: 40px;
+      min-height: 40px;
+    }
   }
 
   &__svg {
@@ -70,6 +92,14 @@
     max-width: 35px;
     height: 3vw;
     max-height: 35px;
+
+    @include breakpoint($mobile-bp) {
+      // width: 5vw;
+      max-width: 35px;
+      min-width: 26px;
+      height: 100%;
+      max-height: 35px;
+    }
 
     use {
       // fill: #fff;
@@ -81,9 +111,13 @@
     position: relative;
 
     @extend %montserrat-500;
-    font-size: 1.65em;
+    font-size: clamp(13px, 1.65em, 15px);
     line-height: 142%;
     color: $text;
+
+    @include breakpoint($mobile-bp) {
+      font-size: 12px;
+    }
 
     &:hover {
 

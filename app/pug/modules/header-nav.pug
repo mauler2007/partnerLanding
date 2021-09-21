@@ -1,4 +1,3 @@
-
 block header-nav 
 mixin navLink(link,name,active)
   li.navigation__item
@@ -11,10 +10,10 @@ mixin navLink(link,name,active)
 
 nav.navigation 
   ul.navigation__list 
-    +navLink('#', 'о нас', true)
-    +navLink('#', 'контакты')
+    +navLink('#advantages', 'о нас', true)
+    +navLink('#contacts', 'контакты')
     +navLink('#', 'faq')
-    +navLink('#', 'инструменты')
+    +navLink('#tools', 'инструменты')
     +navLink('#', 'условия')
     +navLink('#', 'новости')
   

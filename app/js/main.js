@@ -13,29 +13,11 @@ $(function () {
 
     if (scrolled == 0) {
       pseudoHeader.style.height = '0'
-
       header.classList.remove('header--fixed');
       console.log(heightHeader);
-      // pseudoHeader.style.setProperty("height", heightHeader);
 
-      // heightHeader += --heightHeader
-      // console.log(`--heightHeader`);
-
-      // pseudoHeader.style.height = `${heightHeader}px`
-
-      // пробовал так  
-      // pseudoHeader.setProperty('height', heightHeader );
-      // и так
-      // Object.assign(pseudoHeader.style, {
-      //   height: '1500px'
-      // });
-      //  так  тоже попробовал и оказалось что даже класс не  накидывает
-      // pseudoHeader.classList.add('height');
     } else if (scrolled > 0) {
       pseudoHeader.style.setProperty("height", heightHeader);
-
-      // pseudoHeader.style.setProperty("height", heightHeader);
-      // pseudoHeader.style.setProperty("height", 0);
     }
   });
 
@@ -66,51 +48,98 @@ $(function () {
 
   // присваиваю  в качестве значения переменной анонимную функцию  которая  принимает  в качестве аргумента Текущий  элемент  
   let addClassActive = function (currentElem) {
-  // добавляю  у текущего элемента класс active
+    // добавляю  у текущего элемента класс active
     currentElem.classList.add('active');
   };
-  
+
   //  прохожусь снова по ноде циклом и вешаю обработчик события клика на Текущий  элемент
   listOfItems.forEach(function (currentElem, elemIndex, arrayOfElements) {
     currentElem.addEventListener('click', function () {
-  //  вызываю ф-ю  для удаления класса  со всех перебираемых элементов массива
+      //  вызываю ф-ю  для удаления класса  со всех перебираемых элементов массива
       removeClassActive(arrayOfElements);
-  //  вызываю ф-ю  для добавления класса   обьекту на котором сработал обработчик 
+      //  вызываю ф-ю  для добавления класса   обьекту на котором сработал обработчик 
       addClassActive(currentElem);
     })
   });
 
-  
 
-
-  (function () {
-    $('.hamburger-wrapper').on('click', function () {
-      $('.hamburger-menu').toggleClass('animate');
-    })
-  })();
-
+  // ДОБАВЛЕНИЕ КЛАССА ПО КЛИКУ
   let drop = document.querySelector('.drop');
 
-  let addActiveClass =  function (myElem) {
-    myElem.addEventListener('click', function() {
+
+  let addActiveClass = function (myElem) {
+    myElem.addEventListener('click', function () {
       myElem.classList.toggle('active');
     })
   };
 
   addActiveClass(drop);
-  
 
+  $(function () {
+    $('.advantages__show-hide').click(function () {
+
+      $('.advantages__list').toggleClass('open');
+      if ($('.advantages__list').hasClass('open')) {
+        $('.advantages__show-hide').html(`<span class="advantages__show-text">Свернуть </span><span class="advantages__show-icon"><svg class="advantages__show-svg"><use xlink:href="images/sprite.svg#icon-top"></use></svg></span>`);
+      } else {
+        $('.advantages__show-hide').html(`<span class="advantages__show-text">Ещё</span><span class="advantages__show-icon"><svg class="advantages__show-svg"><use xlink:href="images/sprite.svg#icon-down"></use></svg></span>`);
+      }
+    });
+  });
+  // let showMoreBtn = document.querySelector('.advantages__show-hide');
+  // let listOfAdvantages = document.querySelectorAll('.advantages__item');
+  // let mobileListOfAdvantages = '';
+
+
+  // function showAdvantages() {
+  //   showMoreBtn.classList.toggle('active');
+
+  //   console.log(listOfAdvantages);
+
+  //   for(let i = 0; i < 2; i++)
+  //     mobileListOfAdvantages += listOfAdvantages[i]
+  //   console.log(mobileListOfAdvantages)
+  // }
+
+  // showMoreBtn.addEventListener('click', showAdvantages);
+
+  // ГАМБУРГЕР МЕНЮ СТАРТ
+  (function () {
+    $('.hamburger-wrapper').on('click', function () {
+      $('.hamburger-menu').toggleClass('animate');
+    })
+  })();
+  // ГАМБУРГЕР МЕНЮ КОНЕЦ
+
+  // ПОЯВЛЕНИЕ МЕНЮ НАВИГАЦИИ
   let hamburger = document.querySelector('.hamburger-wrapper');
   let headerMenu = document.querySelector('.header__menu');
 
-  hamburger.addEventListener('click', function() {
+  hamburger.addEventListener('click', function () {
     headerMenu.classList.toggle('header__menu--opened')
   });
+  // ПОЯВЛЕНИЕ МЕНЮ НАВИГАЦИИ
 
+
+
+  // ПЛАВНЫЙ СКРОЛЛ НАЧАЛО
+  const smoothLinks = document.querySelectorAll('a[href^="#"]');
+  for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = smoothLink.getAttribute('href');
+
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+  // ПЛАВНЫЙ СКРОЛЛ КОНЕЦ
 
 
   // addActiveClass(hamburger);
-  
+
   // drop.addEventListener('click', function () {
   //   drop.classList.toggle('active');
   // })
@@ -310,20 +339,23 @@ $(function () {
   //   }
   // });
 
-  VANTA.NET({
-    el: "#testemonials",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0xf7f7f7,
-    backgroundColor: 0xf0f18,
-    points: 18.00,
-    maxDistance: 14.00
-  })
+  if (window.innerWidth > 576) {
+    VANTA.NET({
+      el: "#testemonials",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xf7f7f7,
+      backgroundColor: 0xf0f18,
+      points: 18.00,
+      maxDistance: 14.00
+    })
+  }
+
 
 
   //  Определяем поддержку  браузером webp  для загрузки нужных форматов изображений

@@ -12,7 +12,7 @@
 
   advantagesTitle = 'Наши преимущества'
 
-section.advantages
+section#advantages.advantages
   .container 
     .advantages__inner
       .advantages__box
@@ -26,30 +26,12 @@ section.advantages
               img.advantages__icon(src=i.pict, alt='pict')
             p.advantages__name= i.name
             p.advantages__text= i.text
+      button.advantages__show-hide
+        span.advantages__show-text.
+           Ещё 
+        span.advantages__show-icon
+          svg.advantages__show-svg 
+            <use xlink:href="images/sprite.svg#icon-down"></use>
 |
 |
-
-
-//- mixin advItem(pict,name,text)
-//-   li.advantages__item
-//-     .advantages__icon-box 
-//-       img.advantages__icon(src=`images/icons/${pict}.png`)
-//-     p.advantages__name= name
-//-     p.advantages__text= text
-
-//- section.advantages
-//-   .container 
-//-     .advantages__inner
-//-       h2.advantages__title.title 
-//-       ul.advantages__list
-//-         +advItem ('comission','Высокие комиссии','Гибкая система согласования комиссий с индивидуальным подходом.')
-//-         |
-//-         |
-//-         +advItem ('autopayment','Автовыплаты','Автоматические еженедельные выплаты комиссий.')
-//-         |
-//-         |
-//-         +advItem ('promo','Промоматериалы','Постоянно обновляемая база материалов ')
-        
-//- |
-//- |
 

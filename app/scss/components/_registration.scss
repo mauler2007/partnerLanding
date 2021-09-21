@@ -41,6 +41,10 @@
     transition: background 0.3s linear, border-color 0.3s linear;
     cursor: pointer;
 
+    @include breakpoint($mobile-bp) {
+      font-size: clamp(8px, 2vw, 11px);
+    }
+
     &:focus {
       color: $black;
     }

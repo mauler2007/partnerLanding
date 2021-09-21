@@ -59,9 +59,9 @@ body {
   @include breakpoint($desktop-bp) {
     padding: 0 23px;
   }
-  
+
   @include breakpoint($mobile-bp) {
-    padding: 0 15px;
+    padding: 0 14px;
   }
 
 
@@ -130,13 +130,18 @@ footer {
 
 .title {
   position: relative;
-
+  padding: 0 1.5em 0.5em;
   text-align: center;
   color: $text;
   @extend %montserrat-700;
   line-height: 109%;
   font-size: clamp(26px, 3.6vw, 54px);
   // font-size: clamp(36px 3.6vw 54px);
+
+  @include breakpoint($mobile-bp) {
+    font-size: clamp(31px, 6.6vw, 40px);
+    padding: 0 0.6em 0.8em;
+  }
 }
 
 .line {

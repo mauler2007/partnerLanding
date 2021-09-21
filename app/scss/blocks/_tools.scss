@@ -1,21 +1,22 @@
 .tools {
   position: relative;
+  scroll-margin-top: 83px;
 
   padding-top: 4.5em;
   box-shadow: 0px 21px 43px 0px rgba(0, 0, 0, 0.68);
 
   background-color: $white;
 
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    width: 100%;
-    height: 36px;
-    background-color: $white;
-    border-radius: 0 0 40px 40px;
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 100%;
+  //   width: 100%;
+  //   height: 36px;
+  //   background-color: $white;
+  //   border-radius: 0 0 40px 40px;
+  // }
 
   &__inner {
     padding-bottom: 32px;
@@ -26,10 +27,14 @@
     display: inline-block;
     // max-width: 50%;
     margin: 0 auto 3.6em;
+
+    @include breakpoint($mobile-bp) {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
-    padding: 0 1.5em 0.5em;
+    // padding: 0 1.5em 0.5em;
     // margin: 0 auto;
   }
 
