@@ -18,14 +18,15 @@ section#testemonials.testemonials
         |
         .testemonials__line.line.
           just color line 
-      ul.testemonials__list
-        |
-        |
-        for i in review
-          li.testemonials__item 
-            .testemonials__frame 
-                p.testemonials__text= i.revText
-            a.testemonials__link(href= i.href)= i.revLink
+      .testemonials__reviews
+        ul.testemonials__list
           |
           |
+          for i in review
+            li.testemonials__item 
+              .testemonials__frame 
+                  p.testemonials__text= i.revText
+              a.testemonials__link(href= i.href)= i.revLink
+            |
+            |
 

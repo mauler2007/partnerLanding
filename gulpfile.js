@@ -58,6 +58,7 @@ function styles() {
 function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
       'app/js/three.min.js',
       'app/js/vanta.net.min.js',
       'app/js/main.js'

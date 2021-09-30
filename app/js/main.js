@@ -14,7 +14,7 @@ $(function () {
     if (scrolled == 0) {
       pseudoHeader.style.height = '0'
       header.classList.remove('header--fixed');
-      console.log(heightHeader);
+      console.log('height-header:', heightHeader);
 
     } else if (scrolled > 0) {
       pseudoHeader.style.setProperty("height", heightHeader);
@@ -339,22 +339,61 @@ $(function () {
   //   }
   // });
 
-  if (window.innerWidth > 576) {
-    VANTA.NET({
-      el: "#testemonials",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xf7f7f7,
-      backgroundColor: 0xf0f18,
-      points: 18.00,
-      maxDistance: 14.00
-    })
-  }
+
+  const effect = VANTA.NET({
+        el: "#testemonials",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xf7f7f7,
+        backgroundColor: 0xf0f18,
+        points: 18.00,
+        maxDistance: 14.00
+      });
+
+  window.addEventListener('resize', () => {
+
+    if (window.innerWidth < 576) {
+      effect.destroy();
+    } else if (window.innerWidth > 576 ) {
+      
+      effect.init();
+    }
+     
+
+  }, false);
+
+
+  // slick start
+  $(window).on('load resize', function () {
+    if (($(window).width() < 576) && $('.testemonials__list:not(.slick-initialized)')) {
+      $(".testemonials__list").not('.slick-initialized').slick({
+        // centerMode: true,
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        rows: 3,
+        arrows: false
+      });
+    } else if ($('.testemonials__list').hasClass('slick-initialized')) {
+
+      $('.testemonials__list').slick('unslick');
+      // $('.testemonials__list').
+      console.log('stop');
+    }
+
+  });
+
+  // $(document).ready(function () {
+  //   $('.testemonials__list').slick({
+
+  //   });
+  // });
 
 
 
@@ -376,17 +415,6 @@ $(function () {
   //     document.querySelector('body').classList.add('no-webp');
   //   }
   // });
-
-  // one = document.getElementById('instructionNumberOne');
-  // two = document.getElementById('instructionNumberTwo');
-  // three = document.getElementById('instructionNumberThree');
-  // four = document.getElementById('instructionNumberFour');
-
-
-  // var one = document.getElementById('instructionNumberOne');
-  // var two = document.getElementById('instructionNumberTwo');
-  // var three = document.getElementById('instructionNumberThree');
-  // var four = document.getElementById('instructionNumberFour');
 
 
 
@@ -417,9 +445,6 @@ $(function () {
   //   }, 650);
 
   // });
-
-
-
 
 
   // ThisIsWebP().then(function () {

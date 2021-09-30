@@ -54,6 +54,7 @@
     @include breakpoint($mobile-bp) {
       width: 40vw;
       height: 4.2vw;
+      min-height: 15px;
     }
   }
 
@@ -79,7 +80,7 @@
       background-repeat: no-repeat;
 
       @include breakpoint($desktop-bp) {
-        width: 12.85vw;
+        min-width: 12.85vw;
         height: 1.5vw;
       }
 
